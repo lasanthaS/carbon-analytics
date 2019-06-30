@@ -19,7 +19,7 @@ package org.wso2.carbon.stream.processor.core.api;
 
 import org.wso2.carbon.stream.processor.core.util.StatsEnable;
 import org.wso2.msf4j.Request;
-import org.wso2.siddhi.core.util.statistics.metrics.Level;
+import io.siddhi.core.util.statistics.metrics.Level;
 
 import javax.ws.rs.core.Response;
 

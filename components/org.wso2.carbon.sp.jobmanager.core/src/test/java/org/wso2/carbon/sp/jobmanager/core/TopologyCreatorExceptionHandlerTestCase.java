@@ -21,7 +21,7 @@ package org.wso2.carbon.sp.jobmanager.core;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 import org.wso2.carbon.sp.jobmanager.core.topology.SiddhiTopologyCreatorImpl;
-import org.wso2.siddhi.query.api.exception.SiddhiAppValidationException;
+import io.siddhi.query.api.exception.SiddhiAppValidationException;
 
 public class TopologyCreatorExceptionHandlerTestCase {
     private static final Logger log = Logger.getLogger(TopologyCreatorExceptionHandlerTestCase.class);

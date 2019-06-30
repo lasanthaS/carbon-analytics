@@ -27,13 +27,13 @@ import org.wso2.carbon.stream.processor.core.ha.transport.EventSyncConnectionPoo
 import org.wso2.carbon.stream.processor.core.ha.util.HAConstants;
 import org.wso2.carbon.stream.processor.core.internal.StreamProcessorDataHolder;
 import org.wso2.carbon.stream.processor.core.persistence.PersistenceManager;
-import org.wso2.siddhi.core.stream.input.source.SourceHandler;
-import org.wso2.siddhi.core.stream.input.source.SourceHandlerManager;
-import org.wso2.siddhi.core.stream.output.sink.SinkHandler;
-import org.wso2.siddhi.core.stream.output.sink.SinkHandlerManager;
-import org.wso2.siddhi.core.table.record.RecordTableHandler;
-import org.wso2.siddhi.core.table.record.RecordTableHandlerManager;
-import org.wso2.siddhi.core.util.transport.BackoffRetryCounter;
+import io.siddhi.core.stream.input.source.SourceHandler;
+import io.siddhi.core.stream.input.source.SourceHandlerManager;
+import io.siddhi.core.stream.output.sink.SinkHandler;
+import io.siddhi.core.stream.output.sink.SinkHandlerManager;
+import io.siddhi.core.table.record.RecordTableHandler;
+import io.siddhi.core.table.record.RecordTableHandlerManager;
+import io.siddhi.core.util.transport.BackoffRetryCounter;
 
 import java.util.HashMap;
 import java.util.Map;

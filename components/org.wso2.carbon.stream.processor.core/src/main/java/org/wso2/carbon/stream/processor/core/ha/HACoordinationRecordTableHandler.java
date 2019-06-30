@@ -17,14 +17,14 @@
 package org.wso2.carbon.stream.processor.core.ha;
 
 import org.apache.log4j.Logger;
-import org.wso2.siddhi.core.exception.ConnectionUnavailableException;
-import org.wso2.siddhi.core.table.record.RecordTableHandler;
-import org.wso2.siddhi.core.table.record.RecordTableHandlerCallback;
-import org.wso2.siddhi.core.util.collection.operator.CompiledCondition;
-import org.wso2.siddhi.core.util.collection.operator.CompiledExpression;
-import org.wso2.siddhi.core.util.collection.operator.CompiledSelection;
-import org.wso2.siddhi.query.api.definition.Attribute;
-import org.wso2.siddhi.query.api.definition.TableDefinition;
+import io.siddhi.core.exception.ConnectionUnavailableException;
+import io.siddhi.core.table.record.RecordTableHandler;
+import io.siddhi.core.table.record.RecordTableHandlerCallback;
+import io.siddhi.core.util.collection.operator.CompiledCondition;
+import io.siddhi.core.util.collection.operator.CompiledExpression;
+import io.siddhi.core.util.collection.operator.CompiledSelection;
+import io.siddhi.query.api.definition.Attribute;
+import io.siddhi.query.api.definition.TableDefinition;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;

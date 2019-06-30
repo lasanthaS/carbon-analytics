@@ -16,8 +16,8 @@
 
 package org.wso2.carbon.stream.processor.core.ha;
 
-import org.wso2.siddhi.core.table.record.RecordTableHandler;
-import org.wso2.siddhi.core.table.record.RecordTableHandlerManager;
+import io.siddhi.core.table.record.RecordTableHandler;
+import io.siddhi.core.table.record.RecordTableHandlerManager;
 
 /**
  * Implementation of {@link RecordTableHandlerManager} used for two node minimum HA

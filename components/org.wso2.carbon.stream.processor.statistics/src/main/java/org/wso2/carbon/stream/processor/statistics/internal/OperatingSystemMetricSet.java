@@ -23,7 +23,7 @@ import org.wso2.carbon.stream.processor.core.NodeInfo;
 import org.wso2.carbon.stream.processor.statistics.bean.WorkerMetrics;
 import org.wso2.carbon.stream.processor.statistics.bean.WorkerStatistics;
 import org.wso2.carbon.stream.processor.statistics.internal.exception.MetricsConfigException;
-import org.wso2.siddhi.core.util.statistics.metrics.Level;
+import io.siddhi.core.util.statistics.metrics.Level;
 
 import java.lang.management.ManagementFactory;
 import java.text.SimpleDateFormat;

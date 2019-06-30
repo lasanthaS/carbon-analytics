@@ -20,7 +20,7 @@
 package org.wso2.carbon.status.dashboard.core.bean;
 
 import org.wso2.carbon.stream.processor.core.internal.util.SiddhiAppProcessorConstants;
-import org.wso2.siddhi.core.util.SiddhiConstants;
+import io.siddhi.core.util.SiddhiConstants;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;

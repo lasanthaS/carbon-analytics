@@ -34,9 +34,9 @@ import org.wso2.carbon.status.dashboard.core.exception.RDBMSTableException;
 import org.wso2.carbon.status.dashboard.core.exception.StatusDashboardRuntimeException;
 import org.wso2.carbon.status.dashboard.core.internal.MonitoringDataHolder;
 import org.wso2.carbon.stream.processor.core.internal.util.SiddhiAppProcessorConstants;
-import org.wso2.siddhi.core.config.StatisticsConfiguration;
-import org.wso2.siddhi.core.util.SiddhiConstants;
-import org.wso2.siddhi.core.util.statistics.metrics.SiddhiMetricsFactory;
+import io.siddhi.core.config.StatisticsConfiguration;
+import io.siddhi.core.util.SiddhiConstants;
+import io.siddhi.core.util.statistics.metrics.SiddhiMetricsFactory;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;

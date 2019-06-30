@@ -18,18 +18,18 @@
 
 package org.wso2.carbon.siddhi.editor.core.util;
 
-import org.wso2.siddhi.core.executor.function.FunctionExecutor;
-import org.wso2.siddhi.core.query.processor.stream.StreamProcessor;
-import org.wso2.siddhi.core.query.processor.stream.function.StreamFunctionProcessor;
-import org.wso2.siddhi.core.query.processor.stream.window.WindowProcessor;
-import org.wso2.siddhi.core.query.selector.attribute.aggregator.AttributeAggregator;
-import org.wso2.siddhi.core.query.selector.attribute.aggregator.incremental.IncrementalAttributeAggregator;
+import io.siddhi.core.executor.function.FunctionExecutor;
+import io.siddhi.core.query.processor.stream.StreamProcessor;
+import io.siddhi.core.query.processor.stream.function.StreamFunctionProcessor;
+import io.siddhi.core.query.processor.stream.window.WindowProcessor;
+import io.siddhi.core.query.selector.attribute.aggregator.AttributeAggregator;
+import io.siddhi.core.query.selector.attribute.aggregator.incremental.IncrementalAttributeAggregator;
 import org.wso2.carbon.utils.Utils;
-import org.wso2.siddhi.core.stream.input.source.Source;
-import org.wso2.siddhi.core.stream.input.source.SourceMapper;
-import org.wso2.siddhi.core.stream.output.sink.Sink;
-import org.wso2.siddhi.core.stream.output.sink.SinkMapper;
-import org.wso2.siddhi.core.table.record.AbstractRecordTable;
+import io.siddhi.core.stream.input.source.Source;
+import io.siddhi.core.stream.input.source.SourceMapper;
+import io.siddhi.core.stream.output.sink.Sink;
+import io.siddhi.core.stream.output.sink.SinkMapper;
+import io.siddhi.core.table.record.AbstractRecordTable;
 
 import java.util.HashMap;
 import java.util.Map;

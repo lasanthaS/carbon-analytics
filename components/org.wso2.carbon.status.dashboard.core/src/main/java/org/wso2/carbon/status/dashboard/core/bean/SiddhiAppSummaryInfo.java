@@ -22,7 +22,7 @@
  */
 package org.wso2.carbon.status.dashboard.core.bean;
 
-import org.wso2.siddhi.core.util.statistics.metrics.Level;
+import io.siddhi.core.util.statistics.metrics.Level;
 
 public class SiddhiAppSummaryInfo {
     private String appName;

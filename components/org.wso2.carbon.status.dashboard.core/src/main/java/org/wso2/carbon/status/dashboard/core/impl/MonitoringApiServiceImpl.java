@@ -74,7 +74,7 @@ import org.wso2.carbon.status.dashboard.core.model.ServerHADetails;
 //import org.wso2.carbon.status.dashboard.core.model.StatsEnable;
 import org.wso2.carbon.status.dashboard.core.model.WorkerOverview;
 import org.wso2.carbon.stream.processor.core.util.StatsEnable;
-import org.wso2.siddhi.core.util.statistics.metrics.Level;
+import io.siddhi.core.util.statistics.metrics.Level;
 
 import java.io.IOException;
 import java.io.InputStream;

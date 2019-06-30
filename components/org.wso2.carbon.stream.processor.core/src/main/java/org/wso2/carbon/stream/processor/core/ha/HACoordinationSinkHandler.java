@@ -19,10 +19,10 @@
 package org.wso2.carbon.stream.processor.core.ha;
 
 import org.apache.log4j.Logger;
-import org.wso2.siddhi.core.event.Event;
-import org.wso2.siddhi.core.stream.output.sink.SinkHandler;
-import org.wso2.siddhi.core.stream.output.sink.SinkHandlerCallback;
-import org.wso2.siddhi.query.api.definition.StreamDefinition;
+import io.siddhi.core.event.Event;
+import io.siddhi.core.stream.output.sink.SinkHandler;
+import io.siddhi.core.stream.output.sink.SinkHandlerCallback;
+import io.siddhi.query.api.definition.StreamDefinition;
 
 import java.util.Map;
 

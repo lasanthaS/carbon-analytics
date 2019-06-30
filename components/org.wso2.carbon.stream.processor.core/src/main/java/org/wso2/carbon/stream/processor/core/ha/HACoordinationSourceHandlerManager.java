@@ -21,9 +21,9 @@ package org.wso2.carbon.stream.processor.core.ha;
 import org.wso2.carbon.sp.metrics.core.SPThroughputMetric;
 import org.wso2.carbon.stream.processor.core.internal.StreamProcessorDataHolder;
 import org.wso2.carbon.stream.processor.core.internal.util.SiddhiAppProcessorConstants;
-import org.wso2.siddhi.core.stream.input.source.SourceHandler;
-import org.wso2.siddhi.core.stream.input.source.SourceHandlerManager;
-import org.wso2.siddhi.core.util.SiddhiConstants;
+import io.siddhi.core.stream.input.source.SourceHandler;
+import io.siddhi.core.stream.input.source.SourceHandlerManager;
+import io.siddhi.core.util.SiddhiConstants;
 
 /**
  * Implementation of {@link SourceHandlerManager} used for 2 node minimum HA

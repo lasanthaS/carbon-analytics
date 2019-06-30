@@ -40,11 +40,11 @@ import org.wso2.carbon.sp.jobmanager.core.model.ManagerNode;
 import org.wso2.carbon.sp.jobmanager.core.model.SiddhiAppDetails;
 import org.wso2.carbon.sp.jobmanager.core.model.SiddhiAppHolder;
 import org.wso2.msf4j.Request;
-import org.wso2.siddhi.query.api.SiddhiApp;
-import org.wso2.siddhi.query.api.annotation.Annotation;
-import org.wso2.siddhi.query.api.annotation.Element;
-import org.wso2.siddhi.query.api.definition.StreamDefinition;
-import org.wso2.siddhi.query.compiler.SiddhiCompiler;
+import io.siddhi.query.api.SiddhiApp;
+import io.siddhi.query.api.annotation.Annotation;
+import io.siddhi.query.api.annotation.Element;
+import io.siddhi.query.api.definition.StreamDefinition;
+import io.siddhi.query.compiler.SiddhiCompiler;
 
 import java.util.ArrayList;
 import java.util.List;

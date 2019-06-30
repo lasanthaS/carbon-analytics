@@ -18,7 +18,7 @@
 
 package org.wso2.carbon.stream.processor.core.event.queue;
 
-import org.wso2.siddhi.query.api.definition.Attribute;
+import io.siddhi.query.api.definition.Attribute;
 
 public class EventMetaInfo {
     int eventSize;

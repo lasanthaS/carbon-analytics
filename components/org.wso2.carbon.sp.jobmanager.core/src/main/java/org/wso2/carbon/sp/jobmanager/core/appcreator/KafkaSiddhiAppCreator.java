@@ -32,7 +32,7 @@ import org.wso2.carbon.sp.jobmanager.core.topology.SubscriptionStrategyDataHolde
 import org.wso2.carbon.sp.jobmanager.core.util.ResourceManagerConstants;
 import org.wso2.carbon.sp.jobmanager.core.util.SiddhiTopologyCreatorConstants;
 import org.wso2.carbon.sp.jobmanager.core.util.TransportStrategy;
-import org.wso2.siddhi.core.exception.SiddhiAppCreationException;
+import io.siddhi.core.exception.SiddhiAppCreationException;
 
 import java.util.ArrayList;
 import java.util.Collection;

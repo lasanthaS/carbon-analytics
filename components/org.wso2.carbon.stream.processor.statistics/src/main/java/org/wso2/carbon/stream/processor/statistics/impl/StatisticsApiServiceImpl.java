@@ -28,7 +28,7 @@ import org.wso2.carbon.stream.processor.statistics.bean.WorkerStatistics;
 import org.wso2.carbon.stream.processor.statistics.internal.OperatingSystemMetricSet;
 import org.wso2.carbon.stream.processor.statistics.internal.exception.MetricsConfigException;
 import org.wso2.msf4j.Request;
-import org.wso2.siddhi.core.util.statistics.metrics.Level;
+import io.siddhi.core.util.statistics.metrics.Level;
 
 import javax.ws.rs.core.Response;
 

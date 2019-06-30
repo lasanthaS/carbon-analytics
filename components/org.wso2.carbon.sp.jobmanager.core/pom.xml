@@ -157,45 +157,46 @@
 
         <!--SiddhiRuntime dependancies-->
         <dependency>
-            <groupId>org.wso2.extension.siddhi.io.kafka</groupId>
+            <groupId>io.siddhi.extension.io.kafka</groupId>
             <artifactId>siddhi-io-kafka</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wso2.extension.siddhi.io.email</groupId>
+            <groupId>io.siddhi.extension.io.email</groupId>
             <artifactId>siddhi-io-email</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wso2.extension.siddhi.io.tcp</groupId>
+            <groupId>io.siddhi.extension.io.tcp</groupId>
             <artifactId>siddhi-io-tcp</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wso2.extension.siddhi.io.http</groupId>
+            <groupId>io.siddhi.extension.io.http</groupId>
             <artifactId>siddhi-io-http</artifactId>
         </dependency>
         <!--Map Extensions-->
         <!--Mapper Extensions-->
         <dependency>
-            <groupId>org.wso2.extension.siddhi.map.xml</groupId>
+            <groupId>io.siddhi.extension.map.xml</groupId>
             <artifactId>siddhi-map-xml</artifactId>
             <version>${siddhi.map.xml.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.wso2.extension.siddhi.map.json</groupId>
+            <groupId>io.siddhi.extension.map.json</groupId>
             <artifactId>siddhi-map-json</artifactId>
             <version>${siddhi.map.json.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.wso2.extension.siddhi.map.binary</groupId>
+            <groupId>io.siddhi.extension.map.binary</groupId>
             <artifactId>siddhi-map-binary</artifactId>
             <version>${siddhi.map.binary.version}</version>
         </dependency>
         <!--siddhi-stores-->
-        <dependency>
-            <groupId>org.wso2.extension.siddhi.store.solr</groupId>
+        <!-- TODO: Not migrated yet -->
+        <!--<dependency>
+            <groupId>io.siddhi.extension.store.solr</groupId>
             <artifactId>siddhi-store-solr</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
-            <groupId>org.wso2.extension.siddhi.store.rdbms</groupId>
+            <groupId>io.siddhi.extension.store.rdbms</groupId>
             <artifactId>siddhi-store-rdbms</artifactId>
         </dependency>
 
@@ -279,7 +280,7 @@
             <artifactId>hawtbuf</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wso2.extension.siddhi.io.jms</groupId>
+            <groupId>io.siddhi.extension.io.jms</groupId>
             <artifactId>siddhi-io-jms</artifactId>
         </dependency>
         <dependency>
@@ -293,7 +294,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.wso2.extension.siddhi.io.nats</groupId>
+            <groupId>io.siddhi.extension.io.nats</groupId>
             <artifactId>siddhi-io-nats</artifactId>
             <scope>test</scope>
         </dependency>

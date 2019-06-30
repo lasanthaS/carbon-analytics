@@ -20,7 +20,7 @@ package org.wso2.carbon.stream.processor.core.util;
 
 import io.netty.buffer.ByteBuf;
 import org.wso2.carbon.stream.processor.core.event.queue.EventDataMetaInfo;
-import org.wso2.siddhi.query.api.definition.Attribute;
+import io.siddhi.query.api.definition.Attribute;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

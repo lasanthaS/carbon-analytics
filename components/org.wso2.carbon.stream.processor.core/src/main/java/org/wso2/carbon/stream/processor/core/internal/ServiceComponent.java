@@ -53,12 +53,12 @@ import org.wso2.carbon.stream.processor.core.persistence.PersistenceManager;
 import org.wso2.carbon.stream.processor.core.persistence.beans.PersistenceConfigurations;
 import org.wso2.carbon.stream.processor.core.persistence.exception.PersistenceStoreConfigurationException;
 import org.wso2.carbon.stream.processor.core.persistence.util.PersistenceConstants;
-import org.wso2.siddhi.core.SiddhiManager;
-import org.wso2.siddhi.core.config.StatisticsConfiguration;
-import org.wso2.siddhi.core.util.SiddhiComponentActivator;
-import org.wso2.siddhi.core.util.persistence.IncrementalPersistenceStore;
-import org.wso2.siddhi.core.util.persistence.PersistenceStore;
-import org.wso2.siddhi.core.util.statistics.StatisticsManager;
+import io.siddhi.core.SiddhiManager;
+import io.siddhi.core.config.StatisticsConfiguration;
+import io.siddhi.core.util.SiddhiComponentActivator;
+import io.siddhi.core.util.persistence.IncrementalPersistenceStore;
+import io.siddhi.core.util.persistence.PersistenceStore;
+import io.siddhi.core.util.statistics.StatisticsManager;
 
 import java.io.File;
 import java.util.Map;
