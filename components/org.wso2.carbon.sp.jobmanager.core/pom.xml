@@ -139,19 +139,19 @@
 
         <!--Siddhi dependencies-->
         <dependency>
-            <groupId>org.wso2.siddhi</groupId>
+            <groupId>io.siddhi</groupId>
             <artifactId>siddhi-query-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wso2.siddhi</groupId>
+            <groupId>io.siddhi</groupId>
             <artifactId>siddhi-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wso2.siddhi</groupId>
+            <groupId>io.siddhi</groupId>
             <artifactId>siddhi-query-compiler</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wso2.siddhi</groupId>
+            <groupId>io.siddhi</groupId>
             <artifactId>siddhi-annotations</artifactId>
         </dependency>
 
@@ -190,11 +190,10 @@
             <version>${siddhi.map.binary.version}</version>
         </dependency>
         <!--siddhi-stores-->
-        <!-- TODO: Not migrated yet -->
-        <!--<dependency>
-            <groupId>io.siddhi.extension.store.solr</groupId>
+        <dependency>
+            <groupId>org.wso2.extension.siddhi.store.solr</groupId>
             <artifactId>siddhi-store-solr</artifactId>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>io.siddhi.extension.store.rdbms</groupId>
             <artifactId>siddhi-store-rdbms</artifactId>

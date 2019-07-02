@@ -129,8 +129,8 @@ public class ServiceComponent {
                 } else {
                     throw new PersistenceStoreConfigurationException("Persistence Store class with name "
                             + persistenceStoreClassName + " is invalid. The given class has to implement either " +
-                            "org.wso2.siddhi.core.util.persistence.PersistenceStore or " +
-                            "org.wso2.siddhi.core.util.persistence.IncrementalPersistenceStore.");
+                            "io.siddhi.core.util.persistence.PersistenceStore or " +
+                            "io.siddhi.core.util.persistence.IncrementalPersistenceStore.");
                 }
                 if (log.isDebugEnabled()) {
                     log.debug(persistenceStoreClassName + " chosen as persistence store");

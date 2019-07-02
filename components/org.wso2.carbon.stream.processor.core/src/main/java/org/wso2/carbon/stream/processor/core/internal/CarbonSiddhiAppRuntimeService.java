@@ -51,8 +51,8 @@ public class CarbonSiddhiAppRuntimeService implements SiddhiAppRuntimeService {
     public void enableSiddhiAppStatistics(Level enabledStatsLevel) {
         Map<String, SiddhiAppRuntime> siddhiAppRuntimes = getActiveSiddhiAppRuntimes();
         for (Map.Entry<String, SiddhiAppRuntime> siddhiRuntimeEntry: siddhiAppRuntimes.entrySet()) {
-            if (enabledStatsLevel.compareTo(siddhiRuntimeEntry.getValue().getRootMetricsLevel()) != 0) {
-                siddhiRuntimeEntry.getValue().enableStats(enabledStatsLevel);
+            if (enabledStatsLevel.compareTo(siddhiRuntimeEntry.getValue().getStatisticsLevel()) != 0) {
+                siddhiRuntimeEntry.getValue().setStatisticsLevel(enabledStatsLevel);
                 if (log.isDebugEnabled()) {
                     log.debug("Stats has been successful updated for siddhi app :" + siddhiRuntimeEntry.getKey());
                 }

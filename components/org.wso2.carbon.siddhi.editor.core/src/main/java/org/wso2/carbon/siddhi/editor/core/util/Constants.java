@@ -22,7 +22,7 @@ import io.siddhi.core.executor.function.FunctionExecutor;
 import io.siddhi.core.query.processor.stream.StreamProcessor;
 import io.siddhi.core.query.processor.stream.function.StreamFunctionProcessor;
 import io.siddhi.core.query.processor.stream.window.WindowProcessor;
-import io.siddhi.core.query.selector.attribute.aggregator.AttributeAggregator;
+import io.siddhi.core.query.selector.attribute.aggregator.AttributeAggregatorExecutor;
 import io.siddhi.core.query.selector.attribute.aggregator.incremental.IncrementalAttributeAggregator;
 import org.wso2.carbon.utils.Utils;
 import io.siddhi.core.stream.input.source.Source;
@@ -85,7 +85,8 @@ public class Constants {
         SUPER_CLASS_MAP = new HashMap<>();
         SUPER_CLASS_MAP.put(FUNCTION_EXECUTOR, FunctionExecutor.class);
         SUPER_CLASS_MAP.put(INCREMENTAL_AGGREGATOR, IncrementalAttributeAggregator.class);
-        SUPER_CLASS_MAP.put(ATTRIBUTE_AGGREGATOR, AttributeAggregator.class);
+        // Todo (Lasantha): Not sure on this fix. Need to verify before merging.
+        SUPER_CLASS_MAP.put(ATTRIBUTE_AGGREGATOR, AttributeAggregatorExecutor.class);
         SUPER_CLASS_MAP.put(WINDOW_PROCESSOR, WindowProcessor.class);
         SUPER_CLASS_MAP.put(STREAM_FUNCTION_PROCESSOR, StreamFunctionProcessor.class);
         SUPER_CLASS_MAP.put(STREAM_PROCESSOR, StreamProcessor.class);
@@ -97,9 +98,9 @@ public class Constants {
 
         // Populating the package name map
         PACKAGE_NAME_MAP = new HashMap<>();
-        PACKAGE_NAME_MAP.put(FUNCTION_EXECUTOR, "org.wso2.siddhi.core.executor.function");
+        PACKAGE_NAME_MAP.put(FUNCTION_EXECUTOR, "io.siddhi.core.executor.function");
         PACKAGE_NAME_MAP.put(ATTRIBUTE_AGGREGATOR,
-                "org.wso2.siddhi.core.query.selector.attribute.aggregator");
-        PACKAGE_NAME_MAP.put(WINDOW_PROCESSOR, "org.wso2.siddhi.core.query.processor.stream.window");
+                "io.siddhi.core.query.selector.attribute.aggregator");
+        PACKAGE_NAME_MAP.put(WINDOW_PROCESSOR, "io.siddhi.core.query.processor.stream.window");
     }
 }

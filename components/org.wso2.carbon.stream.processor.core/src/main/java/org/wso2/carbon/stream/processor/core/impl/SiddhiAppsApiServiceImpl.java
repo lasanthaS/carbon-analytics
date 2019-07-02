@@ -427,7 +427,7 @@ public class SiddhiAppsApiServiceImpl extends SiddhiAppsApiService {
                         SiddhiAppMetrics appMetrics = new SiddhiAppMetrics();
                         appMetrics.setAge(age);
                         appMetrics.appName(siddhiAppFileEntry.getKey());
-                        appMetrics.isStatEnabled(siddiAppData.getSiddhiAppRuntime().getRootMetricsLevel());
+                        appMetrics.isStatEnabled(siddiAppData.getSiddhiAppRuntime().getStatisticsLevel());
                         appMetrics.status(siddiAppData.isActive() ?
                                 SiddhiAppProcessorConstants.SIDDHI_APP_STATUS_ACTIVE :
                                 SiddhiAppProcessorConstants.SIDDHI_APP_STATUS_INACTIVE);
@@ -446,7 +446,7 @@ public class SiddhiAppsApiServiceImpl extends SiddhiAppsApiService {
                     }
                     appMetrics.appName(siddhiAppFileEntry.getKey());
                     if (siddiAppData.isActive()) {
-                        appMetrics.isStatEnabled(siddiAppData.getSiddhiAppRuntime().getRootMetricsLevel());
+                        appMetrics.isStatEnabled(siddiAppData.getSiddhiAppRuntime().getStatisticsLevel());
                     } else {
                         appMetrics.isStatEnabled(Level.OFF);
                     }
@@ -473,17 +473,17 @@ public class SiddhiAppsApiServiceImpl extends SiddhiAppsApiService {
             boolean appStatChanged = false;
             if (statsEnabled.getEnabledSiddhiStatLevel() != null) {
                 if (statsEnabled.getEnabledSiddhiStatLevel().compareTo(siddiAppData.getSiddhiAppRuntime().
-                        getRootMetricsLevel()) != 0) {
-                    siddiAppData.getSiddhiAppRuntime().enableStats(statsEnabled.getEnabledSiddhiStatLevel());
+                        getStatisticsLevel()) != 0) {
+                    siddiAppData.getSiddhiAppRuntime().setStatisticsLevel(statsEnabled.getEnabledSiddhiStatLevel());
                     appStatChanged = true;
                 }
             }
             if (statsEnabled.getStatsEnable() !=
-                    (siddiAppData.getSiddhiAppRuntime().getRootMetricsLevel().compareTo(Level.OFF) != 0)) {
+                    (siddiAppData.getSiddhiAppRuntime().getStatisticsLevel().compareTo(Level.OFF) != 0)) {
                 if (statsEnabled.getStatsEnable()) {
-                    siddiAppData.getSiddhiAppRuntime().enableStats(Level.DETAIL);
+                    siddiAppData.getSiddhiAppRuntime().setStatisticsLevel(Level.DETAIL);
                 } else {
-                    siddiAppData.getSiddhiAppRuntime().enableStats(Level.OFF);
+                    siddiAppData.getSiddhiAppRuntime().setStatisticsLevel(Level.OFF);
                 }
                 appStatChanged = true;
             }
@@ -510,8 +510,8 @@ public class SiddhiAppsApiServiceImpl extends SiddhiAppsApiService {
                 .getSiddhiAppMap();
         for (Map.Entry siddhiAppEntry : siddhiAppMap.entrySet()) {
             SiddhiAppData siddiAppData = (SiddhiAppData) siddhiAppEntry.getValue();
-            if (statsEnabled.compareTo(siddiAppData.getSiddhiAppRuntime().getRootMetricsLevel()) != 0) {
-                siddiAppData.getSiddhiAppRuntime().enableStats(statsEnabled);
+            if (statsEnabled.compareTo(siddiAppData.getSiddhiAppRuntime().getStatisticsLevel()) != 0) {
+                siddiAppData.getSiddhiAppRuntime().setStatisticsLevel(statsEnabled);
                 if (log.isDebugEnabled()) {
                     log.debug("Stats has been sucessfull updated for siddhi app :" + siddhiAppEntry.getKey());
                 }

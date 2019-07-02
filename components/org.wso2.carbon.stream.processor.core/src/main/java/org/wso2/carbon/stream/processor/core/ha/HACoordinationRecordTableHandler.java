@@ -16,6 +16,8 @@
 
 package org.wso2.carbon.stream.processor.core.ha;
 
+import io.siddhi.core.util.snapshot.state.State;
+import io.siddhi.core.util.snapshot.state.StateFactory;
 import org.apache.log4j.Logger;
 import io.siddhi.core.exception.ConnectionUnavailableException;
 import io.siddhi.core.table.record.RecordTableHandler;
@@ -38,25 +40,22 @@ import static org.wso2.carbon.stream.processor.core.ha.RecordTableData.EventType
 /**
  * Implementation of {@link RecordTableHandler} used for two node minimum HA
  */
-public class HACoordinationRecordTableHandler extends RecordTableHandler {
+public class HACoordinationRecordTableHandler extends RecordTableHandler<HACoordinationRecordTableHandler.TableState> {
 
     private boolean isActiveNode;
     private long lastEventChunkTimestamp;
     private TableDefinition tableDefinition;
     private static final Logger log = Logger.getLogger(HACoordinationRecordTableHandler.class);
 
-
-    public HACoordinationRecordTableHandler() {
-    }
-
     @Override
-    public void init(String elementId, TableDefinition tableDefinition) {
+    public StateFactory<TableState> init(String elementId, TableDefinition tableDefinition) {
         this.tableDefinition = tableDefinition;
+        return TableState::new;
     }
 
     @Override
-    public void add(long timestamp, List<Object[]> records, RecordTableHandlerCallback recordTableHandlerCallback)
-            throws ConnectionUnavailableException {
+    public void add(long timestamp, List<Object[]> records, RecordTableHandlerCallback recordTableHandlerCallback,
+                    TableState state) throws ConnectionUnavailableException {
         if (isActiveNode) {
             lastEventChunkTimestamp = timestamp;
             recordTableHandlerCallback.add(records);
@@ -68,8 +67,8 @@ public class HACoordinationRecordTableHandler extends RecordTableHandler {
 
     @Override
     public void delete(long timestamp, List<Map<String, Object>> deleteConditionParameterMaps,
-                       CompiledCondition compiledCondition,
-                       RecordTableHandlerCallback recordTableHandlerCallback) throws ConnectionUnavailableException {
+                       CompiledCondition compiledCondition, RecordTableHandlerCallback recordTableHandlerCallback,
+                       TableState state) throws ConnectionUnavailableException {
         if (isActiveNode) {
             lastEventChunkTimestamp = timestamp;
             recordTableHandlerCallback.delete(deleteConditionParameterMaps, compiledCondition);
@@ -80,11 +79,13 @@ public class HACoordinationRecordTableHandler extends RecordTableHandler {
     }
 
     @Override
-    public void update(long timestamp, CompiledCondition compiledCondition,
+    public void update(long timestamp,
+                       CompiledCondition compiledCondition,
                        List<Map<String, Object>> updateConditionParameterMaps,
                        LinkedHashMap<String, CompiledExpression> updateSetMap,
                        List<Map<String, Object>> updateSetParameterMaps,
-                       RecordTableHandlerCallback recordTableHandlerCallback) throws ConnectionUnavailableException {
+                       RecordTableHandlerCallback recordTableHandlerCallback,
+                       TableState state) throws ConnectionUnavailableException {
         if (isActiveNode) {
             lastEventChunkTimestamp = timestamp;
             recordTableHandlerCallback.update(compiledCondition, updateConditionParameterMaps, updateSetMap,
@@ -114,10 +115,11 @@ public class HACoordinationRecordTableHandler extends RecordTableHandler {
     }
 
     @Override
-    public Iterator<Object[]> find(long timestamp, Map<String, Object> findConditionParameterMap,
+    public Iterator<Object[]> find(long timestamp,
+                                   Map<String, Object> findConditionParameterMap,
                                    CompiledCondition compiledCondition,
-                                   RecordTableHandlerCallback recordTableHandlerCallback)
-            throws ConnectionUnavailableException {
+                                   RecordTableHandlerCallback recordTableHandlerCallback,
+                                   TableState state) throws ConnectionUnavailableException {
         if (isActiveNode) {
             lastEventChunkTimestamp = timestamp;
         }
@@ -126,8 +128,9 @@ public class HACoordinationRecordTableHandler extends RecordTableHandler {
 
     @Override
     public boolean contains(long timestamp, Map<String, Object> containsConditionParameterMap,
-                            CompiledCondition compiledCondition, RecordTableHandlerCallback recordTableHandlerCallback)
-            throws ConnectionUnavailableException {
+                            CompiledCondition compiledCondition,
+                            RecordTableHandlerCallback recordTableHandlerCallback,
+                            TableState state) throws ConnectionUnavailableException {
         if (isActiveNode) {
             lastEventChunkTimestamp = timestamp;
         }
@@ -138,18 +141,18 @@ public class HACoordinationRecordTableHandler extends RecordTableHandler {
     public Iterator<Object[]> query(long timestamp, Map<String, Object> propertiesMap,
                                     CompiledCondition compiledCondition,
                                     CompiledSelection compiledSelection,
-                                    RecordTableHandlerCallback recordTableHandlerCallback)
-            throws ConnectionUnavailableException {
+                                    RecordTableHandlerCallback recordTableHandlerCallback,
+                                    TableState state) throws ConnectionUnavailableException {
         return query(timestamp, propertiesMap, compiledCondition, compiledSelection,
-                null, recordTableHandlerCallback);
+                null, recordTableHandlerCallback, state);
     }
 
     @Override
     public Iterator<Object[]> query(long timestamp, Map<String, Object> propertiesMap,
                                     CompiledCondition compiledCondition,
                                     CompiledSelection compiledSelection, Attribute[] outputAttributes,
-                                    RecordTableHandlerCallback recordTableHandlerCallback)
-            throws ConnectionUnavailableException {
+                                    RecordTableHandlerCallback recordTableHandlerCallback,
+                                    TableState state) throws ConnectionUnavailableException {
         if (isActiveNode) {
             lastEventChunkTimestamp = timestamp;
         }
@@ -185,5 +188,22 @@ public class HACoordinationRecordTableHandler extends RecordTableHandler {
 
     public String getTableId() {
         return tableDefinition.getId();
+    }
+
+    class TableState extends State {
+        @Override
+        public boolean canDestroy() {
+            return false;
+        }
+
+        @Override
+        public Map<String, Object> snapshot() {
+            return null;
+        }
+
+        @Override
+        public void restore(Map<String, Object> state) {
+
+        }
     }
 }

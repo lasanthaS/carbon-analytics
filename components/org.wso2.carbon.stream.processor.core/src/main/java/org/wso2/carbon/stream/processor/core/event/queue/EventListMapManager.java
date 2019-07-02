@@ -180,7 +180,7 @@ public class EventListMapManager {
                     boolean isFound = false;
                     for (Source source : sources) {
                         if(queuedEvent.getSourceHandlerElementId().equals(source.getMapper().
-                                getHandler().getElementId())){
+                                getHandler().getId())){
                             source.getMapper().getHandler().sendEvent(queuedEvent.getEvent(),
                                     queuedEvent.getTransportSyncProperties());
                             if (null != queuedEvent.getTransportSyncProperties() &&

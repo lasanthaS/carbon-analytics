@@ -194,9 +194,9 @@ public class SiddhiMetricsTestcase {
 //        Assert.assertTrue(metricsMXBean.getMetricsCount() > 0);
 //        Assert.assertEquals(metricsMXBean.getRootLevel(), Level.INFO.name());
 //        Assert.assertEquals(metricsMXBean.getDefaultSource(), "wso2-sp");
-//        Assert.assertEquals(metricsMXBean.getMetricLevel("org.wso2.siddhi.SiddhiApps.TestApp.Siddhi.Streams." +
+//        Assert.assertEquals(metricsMXBean.getMetricLevel("io.siddhi.SiddhiApps.TestApp.Siddhi.Streams." +
 //                "cseEventStream.throughput"), Level.INFO.name());
-//        Assert.assertEquals(metricsMXBean.getMetricLevel("org.wso2.siddhi.SiddhiApps.TestApp.Siddhi.Streams" +
+//        Assert.assertEquals(metricsMXBean.getMetricLevel("io.siddhi.SiddhiApps.TestApp.Siddhi.Streams" +
 //                ".cseEventStream2.throughput"), Level.INFO.name());
 //        siddhiAppRuntime.shutdown();
 //    }

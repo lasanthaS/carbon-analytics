@@ -189,7 +189,7 @@ public class HAManager {
                 try {
                     ((HACoordinationSourceHandler) sourceHandler).setAsActive();
                 } catch (Throwable t) {
-                    log.error("HA Deployment: Error when connecting to source " + sourceHandler.getElementId() +
+                    log.error("HA Deployment: Error when connecting to source " + sourceHandler.getId() +
                             " while changing from passive state to active, skipping the source. ", t);
                     continue;
                 }
@@ -231,7 +231,7 @@ public class HAManager {
                         handler.setAsActive();
                     }
                 } catch (Throwable t) {
-                    log.error("HA Deployment: Error when connecting to sink " + sinkHandler.getElementId() +
+                    log.error("HA Deployment: Error when connecting to sink " + sinkHandler.getId() +
                             " while changing from passive state to active, skipping the sink. ", t);
                     continue;
                 }

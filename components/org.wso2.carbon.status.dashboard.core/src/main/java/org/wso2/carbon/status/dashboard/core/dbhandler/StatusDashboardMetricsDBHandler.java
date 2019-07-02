@@ -90,7 +90,7 @@ public class StatusDashboardMetricsDBHandler {
             .getMetricsDatasourceName();
     private static final String[] METRICS_TABLE_NAMES = {METRICS_TABLE_METRIC_COUNTER, METRICS_TABLE_METRIC_GAUGE,
             METRICS_TABLE_METRIC_HISTOGRAM, METRICS_TABLE_METRIC_METER, METRICS_TABLE_METRIC_TIMER};
-    private static final String APP_NAME_PREFIX = "org.wso2.siddhi.SiddhiApps.";
+    private static final String APP_NAME_PREFIX = "io.siddhi.SiddhiApps.";
     private String selectAppMetricsQuery;
     private String recordSelectHAMetricsQuery;
     private String recordSelectAggregatedAppMetricsQuery;

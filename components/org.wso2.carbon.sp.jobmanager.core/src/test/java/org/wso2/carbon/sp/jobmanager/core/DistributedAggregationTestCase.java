@@ -111,7 +111,7 @@ public class DistributedAggregationTestCase {
      * If a siddhi query uses persistent aggregation, then that aggregation definition
      * should be added to the {@link SiddhiQueryGroup} where that query resides and the source stream of the
      * aggregation should be renamed. (To avoid the aggregation get fed) Also the new stream should be added to the
-     * {@link SiddhiQueryGroup} to avoid {@link org.wso2.siddhi.query.compiler.exception.SiddhiParserException}
+     * {@link SiddhiQueryGroup} to avoid {@link io.siddhi.query.compiler.exception.SiddhiParserException}
      */
     @Test(dependsOnMethods = "testAggregationQueryGroupCreation")
     public void testQueryJoinAggregation() {
@@ -205,7 +205,7 @@ public class DistributedAggregationTestCase {
      * If a siddhi partition uses persistent aggregation, then that aggregation definition
      * should be added to the {@link SiddhiQueryGroup} where that partition resides and the source stream of the
      * aggregation should be renamed. (To avoid the aggregation get fed) Also the new stream should be added to the
-     * {@link SiddhiQueryGroup} to avoid {@link org.wso2.siddhi.query.compiler.exception.SiddhiParserException}
+     * {@link SiddhiQueryGroup} to avoid {@link io.siddhi.query.compiler.exception.SiddhiParserException}
      */
     @Test(dependsOnMethods = "testQueryJoinAggregation")
     public void testPartitionJoinAggregation() {

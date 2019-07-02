@@ -18,6 +18,9 @@
 
 package org.wso2.carbon.sp.coordination.listener;
 
+import io.siddhi.core.config.SiddhiQueryContext;
+import io.siddhi.core.util.snapshot.state.State;
+import io.siddhi.core.util.snapshot.state.StateFactory;
 import org.wso2.carbon.sp.coordination.listener.internal.CoordinationListenerDataHolder;
 import io.siddhi.annotation.Example;
 import io.siddhi.annotation.Extension;
@@ -58,24 +61,26 @@ import java.util.Map;
                         "boolean, which will have the values either 'true' or 'false'."
         )
 )
-public class IsLeaderStreamFunctionProcessor extends FunctionExecutor {
+public class IsLeaderStreamFunctionProcessor extends FunctionExecutor<IsLeaderStreamFunctionProcessor.FunctionState> {
 
     Attribute.Type returnType = Attribute.Type.BOOL;
 
     @Override
-    protected void init(ExpressionExecutor[] expressionExecutors, ConfigReader configReader,
-                        SiddhiAppContext siddhiAppContext) {
-        //Nothing to be done.
+    protected StateFactory<FunctionState> init(ExpressionExecutor[] attributeExpressionExecutors,
+                                               ConfigReader configReader, SiddhiQueryContext siddhiQueryContext) {
+        // Nothing to be done.
+        return FunctionState::new;
     }
 
     @Override
-    protected Object execute(Object[] data) {
-        //Since this function takes in no parameters, this method does not get called. Hence, not implemented.
+    protected Object execute(Object[] data, FunctionState state) {
+        // Since this function takes in no parameters, this method does not get called. Hence, not implemented.
         return null;
     }
 
+
     @Override
-    protected Object execute(Object data) {
+    protected Object execute(Object data, FunctionState state) {
         if (CoordinationListenerDataHolder.isClusteringEnabled() && !CoordinationListenerDataHolder.isLeader()) {
             return false;
         } else {
@@ -88,13 +93,21 @@ public class IsLeaderStreamFunctionProcessor extends FunctionExecutor {
         return returnType;
     }
 
-    @Override
-    public Map<String, Object> currentState() {
-        return null;  //No need to maintain a state.
-    }
+    public static class FunctionState extends State {
+        @Override
+        public boolean canDestroy() {
+            return false;
+        }
 
-    @Override
-    public void restoreState(Map<String, Object> map) {
-        //Since there's no need to maintain a state, nothing needs to be done here.
+        @Override
+        public Map<String, Object> snapshot() {
+            // No need to maintain a state.
+            return null;
+        }
+
+        @Override
+        public void restore(Map<String, Object> state) {
+            // Since there's no need to maintain a state, nothing needs to be done here.
+        }
     }
 }

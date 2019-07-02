@@ -316,7 +316,7 @@ public class DBTableUtils {
      * @param stmt    the statement to which the element should be set.
      * @param ordinal the ordinal of the element in the statement (its place in a potential list of places).
      * @param type    the type of the element to be set, adheres to
-     *                {@link org.wso2.siddhi.query.api.definition.Attribute.Type}.
+     *                {@link io.siddhi.query.api.definition.Attribute.Type}.
      * @param value   the value of the element.
      * @throws SQLException if there are issues when the element is being set.
      */
