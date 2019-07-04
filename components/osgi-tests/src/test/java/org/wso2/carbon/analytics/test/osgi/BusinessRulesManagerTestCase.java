@@ -69,10 +69,11 @@ public class BusinessRulesManagerTestCase {
 
     private Option copyPermissionDB() {
         String basedir = System.getProperty("basedir");
-        Path carbonYmlFilePath = Paths.get(basedir, "src", "test", "resources", "carbon-context", "carbon.yml");
-        carbonYmlFilePath = Paths.get(basedir, "src", "test", "resources",
-                "database", "PERMISSION_DB.h2.db");
-        return copyFile(carbonYmlFilePath, Paths.get("wso2", "dashboard", "database", "PERMISSION_DB.h2.db"));
+        if (basedir == null) {
+            basedir = Paths.get(".").toString();
+        }
+        Path sourePath = Paths.get(basedir, "src", "test", "resources", "database", "PERMISSION_DB.h2.db");
+        return copyFile(sourePath, Paths.get("wso2", "dashboard", "database", "PERMISSION_DB.h2.db"));
     }
 
     @Configuration

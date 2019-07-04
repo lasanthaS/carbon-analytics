@@ -118,7 +118,7 @@ public class StatisticsTestCase {
         AssertJUnit.assertEquals("test.size", bufferedEventsTracker.getName(eventBufferHolder));
     }
     
-    @Test
+    @Test (enabled = false)
     public void statisticsTest1() throws InterruptedException {
         log.info("statistics test 1");
         SiddhiManager siddhiManager = new SiddhiManager();
@@ -200,7 +200,7 @@ public class StatisticsTestCase {
         siddhiAppRuntime.shutdown();
     }
     
-    @Test
+    @Test (enabled = false)
     public void asyncTest5() throws InterruptedException {
         log.info("async test 5");
         SiddhiManager siddhiManager = new SiddhiManager();

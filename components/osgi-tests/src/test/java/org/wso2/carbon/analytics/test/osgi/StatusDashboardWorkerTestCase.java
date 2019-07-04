@@ -91,10 +91,11 @@ public class StatusDashboardWorkerTestCase {
 
     private Option copyPermissionDB() {
         String basedir = System.getProperty("basedir");
-        Path carbonYmlFilePath = Paths.get(basedir, "src", "test", "resources", "carbon-context", "carbon.yml");
-        carbonYmlFilePath = Paths.get(basedir, "src", "test", "resources",
-                "database", "PERMISSION_DB.h2.db");
-        return copyFile(carbonYmlFilePath, Paths.get("wso2", "worker", "database", "PERMISSION_DB.h2.db"));
+        if (basedir == null) {
+             basedir = Paths.get(".").toString();
+        }
+        Path sourcePath = Paths.get(basedir, "src", "test", "resources", "database", "PERMISSION_DB.h2.db");
+        return copyFile(sourcePath, Paths.get("wso2", "worker", "database", "PERMISSION_DB.h2.db"));
     }
 
     /**
